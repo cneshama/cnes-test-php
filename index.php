@@ -1,1 +1,1 @@
-<?php echo "CNES OpenShift Test"; ?>
+<?php echo "CNES OpenShift Test rev2"; ?>
