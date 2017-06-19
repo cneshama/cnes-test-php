@@ -1,5 +1,5 @@
 <?php echo "CNES OpenShift Test rev2 [DB Connect]";
-$mysqli = new mysqli(getenv("MARIADB_SERVICE_HOST"), getenv("MYSQL_USER"), getenv("MYSQL_DATABASE"));
+$mysqli = new mysqli('172.30.174.245', 'cnes', 'cnes011', 'cnesmariadb');
 if ($mysqli->connect_error) {
     exit($mysqli->connect_error);
 } else {
