@@ -1,12 +1,55 @@
 <?php echo "CNES OpenShift Test rev2 [DB Connect]";
+
+//DB Connect
 $mysqli = new mysqli('172.30.174.245', 'cnes', 'cnes011', 'cnesmariadb');
 if ($mysqli->connect_error) {
     exit($mysqli->connect_error);
 } else {
     $mysqli->set_charset("utf8");
 }
-$result = $mysqli->query("show databases") or exit($mysqli->error());
-echo var_dump($result->fetch_assoc());
+
+//DB select
+mysql_select_db("test", $mysqli);
+
+//SQL set
+$quryset = mysql_query("SELECT * FROM personal;");
+
+echo "<TABLE  border='1' >";
+echo "<TR>";
+echo "<TD>id";
+echo "</TD>";
+echo "<TD>old";
+echo "</TD>";
+echo "<TD>name";
+echo "</TD>";
+echo "</TR>";
+
+//Get data
+while ($data = mysql_fetch_array($quryset)){
+
+    echo "<TR>";
+    
+        //1st column//////////////
+        echo "<TD>" . $data[0];
+        echo "</TD>";
+        //////////////////////////
+
+        //2nd column//////////////
+        echo "<TD>" . $data[1];
+        echo "</TD>";
+        //////////////////////////
+
+        //3rd column//////////////
+        echo "<TD>" . $data[2];
+        echo "</TD>";
+        //////////////////////////
+
+    echo "</TR>";
+}
+echo "</TABLE>";
+
+//DB Disconnect
 $mysqli->close();
 
 ?>
+
