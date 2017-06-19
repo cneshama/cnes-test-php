@@ -33,7 +33,8 @@ echo "</TR>";
 
 //Get data
 //while ($data = mysql_fetch_array($quryset)){
-while ($data = mysqli_fetch_array($quryset, MYSQLI_ASSOC)){
+//while ($data = mysqli_fetch_array($quryset, MYSQLI_ASSOC)){
+while ($data = mysqli_fetch_array($quryset)){
 
     echo "<TR>";
     
