@@ -18,7 +18,8 @@ if (mysqli_connect_errno()) {
 $mysqli->select_db("test");
 
 //SQL set
-$quryset = mysql_query("SELECT * FROM personal;");
+//$quryset = mysql_query("SELECT * FROM personal;");
+$quryset = $mysqli->query("SELECT * FROM personal;");
 
 echo "<TABLE  border='1' >";
 echo "<TR>";
