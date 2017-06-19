@@ -8,8 +8,14 @@ if ($mysqli->connect_error) {
     $mysqli->set_charset("utf8");
 }
 
+//check connect
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+
 //DB select
-mysql_select_db("test", $mysqli);
+$mysqli->select_db("test");
 
 //SQL set
 $quryset = mysql_query("SELECT * FROM personal;");
